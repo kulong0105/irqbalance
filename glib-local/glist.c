@@ -116,12 +116,12 @@ _g_list_remove_link (GList *list,
   if (link)
     {
       if (link->prev)
-	link->prev->next = link->next;
+		link->prev->next = link->next;
+	  else
+		list = list->next;
+
       if (link->next)
 	link->next->prev = link->prev;
-      
-      if (link == list)
-	list = list->next;
       
       link->next = NULL;
       link->prev = NULL;
